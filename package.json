@@ -1,0 +1,33 @@
+{
+  "name": "@haydendonald/node-red-contrib-node-passer",
+  "version": "1.0.6",
+  "description": "A Node-RED node that ensures messages are always passed through, even when consumed by downstream logic",
+  "devDependencies": {
+    "@types/node": "^18.14.0",
+    "@types/node-red": "^1.2.1",
+    "typescript": "^4.9.5"
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "package-lock.json",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && cp -r nodes dist && find dist -name '*.ts' -delete && tsc"
+  },
+  "keywords": [
+    "node-red"
+  ],
+  "author": "Hayden Donald",
+  "license": "ISC",
+  "node-red": {
+    "nodes": {
+      "NodePasserNode": "dist/NodePasserNode/nodePasserNode.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
